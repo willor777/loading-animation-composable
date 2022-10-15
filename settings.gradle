@@ -12,6 +12,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "compose-loading-animation-lib"
+rootProject.name = "loading-animation-composable"
 include ':app'
 include ':compose-loading-anim'
