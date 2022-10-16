@@ -26,9 +26,9 @@ Current Version...
 
 ```kotlin
 
-        // This function is part of the library. Just give it a reference to the
-        // Context.resources along with the R.raw.fileName
-        val lottieJson: String = loadLottieFile(resources, R.raw.yourLottieJson)
+// This function is part of the library. Just give it a reference to the
+// Context.resources along with the R.raw.fileName
+val lottieJson: String = loadLottieFile(resources, R.raw.yourLottieJson)
 
 ```
 
@@ -40,24 +40,24 @@ when the condition evaluates to true, or for when the maxTime is hit.
 
 ```kotlin
 
-    var counter = 0
+var counter = 0
 
-    LoadingAnimation(
-        modifier = Modifier.fillMaxSize(),
-        lottieJson = lottieJsonFromRawRes,
-        maxLoopTime = 20000,
-        onMaxTime = {
-            // This will be called if maxLoopTime is hit
-        },
-        onConditionTrue = {
-            // This will be called if the condition evaluates true before maxLoopTime
-        },
-        condition = {
-            // The condition is checked every 500ms
-            counter += 1
-            
-            // When this evaluates to true, the animation will stop
-            counter > 10
-        }
-    )
+LoadingAnimation(
+    modifier = Modifier.fillMaxSize(),
+    lottieJson = lottieJsonFromRawRes,
+    maxLoopTime = 20000,
+    onMaxTime = {
+        // This will be called if maxLoopTime is hit
+    },
+    onConditionTrue = {
+        // This will be called if the condition evaluates true before maxLoopTime
+    },
+    condition = {
+        // The condition is checked every 500ms
+        counter += 1
+        
+        // When this evaluates to true, the animation will stop
+        counter > 10
+    }
+)
 ```
