@@ -21,7 +21,9 @@ Current Version...
 
 <h3>Usage</h3>
 1. Download a Lottie Json Animation from https://lottiefiles.com/
+
 2. Create a 'raw' folder in your project's resources directory and place the Lottie Json there.
+
 3. Loading the Json is done using the 'resources' field of an Activity's Context...
 
 ```kotlin
