@@ -23,6 +23,7 @@ Current Version...
 1. Download a Lottie Json Animation from https://lottiefiles.com/
 2. Create a 'raw' folder in your project's resources directory and place the Lottie Json there.
 3. Loading the Json is done using the 'resources' field of an Activity's Context...
+
 ```kotlin
 
         // This function is part of the library. Just give it a reference to the
@@ -37,3 +38,26 @@ check should be false initially. The animation will stop looping whenever it eva
 You can also provide a: Modifier, Speed-of-animation, Max-Loop-Time in MS, and callbacks for
 when the condition evaluates to true, or for when the maxTime is hit.
 
+```kotlin
+
+    var counter = 0
+
+    LoadingAnimation(
+        modifier = Modifier.fillMaxSize(),
+        lottieJson = lottieJsonFromRawRes,
+        maxLoopTime = 20000,
+        onMaxTime = {
+            // This will be called if maxLoopTime is hit
+        },
+        onConditionTrue = {
+            // This will be called if the condition evaluates true before maxLoopTime
+        },
+        condition = {
+            // The condition is checked every 500ms
+            counter += 1
+            
+            // When this evaluates to true, the animation will stop
+            counter > 10
+        }
+    )
+```
