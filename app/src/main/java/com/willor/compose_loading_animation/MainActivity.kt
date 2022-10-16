@@ -19,11 +19,6 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val l = resources.openRawResource(R.raw.lottie_anim_cube)
-
-        val lr = resources
-
-        val lottieJson = loadLottieFile(resources, R.raw.lottie_anim_cube)
 
         setContent {
             ComposeloadinganimationTheme {
@@ -32,16 +27,17 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    AnimationTest(lottieJson)
+                    AnimationTest(loadLottieFile(resources, R.raw.lottie_anim_cube))
                 }
             }
         }
     }
+
 }
 
 
 @Composable
-fun AnimationTest(lottieJson: String) {
+fun AnimationTest(json: String) {
 
     var counter = 0
 
@@ -49,7 +45,7 @@ fun AnimationTest(lottieJson: String) {
 
         LoadingAnimation(
             modifier = Modifier.fillMaxSize(),
-            lottieJson = lottieJson,
+            lottieJson = json,
             maxLoopTime = 20000,
             onMaxTime = {
                 Log.d("TESTING", "Max time callback called hit")
