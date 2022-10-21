@@ -11,7 +11,7 @@ repositories {
 
 // Add the dependency
 dependencies {
-    implementation 'com.github.willor777:loading-animation-composable:<Current-Version>'
+    implementation 'com.github.willor777:loading-animation-composable:master-SNAPSHOT'
 }
 ```
 
