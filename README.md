@@ -9,7 +9,7 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 
-// Add the dependency
+// Add the dependency - Snapshot is Recommended, or use the current release 
 dependencies {
     implementation 'com.github.willor777:loading-animation-composable:master-SNAPSHOT'
 }
@@ -29,8 +29,14 @@ Current Version...
 ```kotlin
 
 // This function is part of the library. Just give it a reference to the
-// Context.resources along with the R.raw.fileName
+// Context.resources along with the R.raw.fileName. Will return the lottie file as a String type.
 val lottieJson: String = loadLottieFile(resources, R.raw.yourLottieJson)
+
+// Or you can load the String yourself. Example...
+val lottieJsonSelfLoaded: String = resources.openRawResource(idOfJson).bufferedReader().use{
+        it.readText()
+    }
+
 
 ```
 
