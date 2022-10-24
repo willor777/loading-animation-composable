@@ -64,20 +64,20 @@ fun Animation(
     speed: Float,
     lottieJson: String,
 ){
-
-    // Load the json as a lottie composition
-    val composition by rememberLottieComposition(
-        LottieCompositionSpec.JsonString(lottieJson)
-    )
-
-    // Set up the progress tracking
-    val progress by animateLottieCompositionAsState(
-        composition = composition,
-        iterations = LottieConstants.IterateForever,
-        speed = speed,
-    )
-
     if (show){
+
+        // Load the json as a lottie composition
+        val composition by rememberLottieComposition(
+            LottieCompositionSpec.JsonString(lottieJson)
+        )
+
+        // Set up the progress tracking
+        val progress by animateLottieCompositionAsState(
+            composition = composition,
+            iterations = LottieConstants.IterateForever,
+            speed = speed,
+        )
+
         LottieAnimation(
             modifier = modifier,
             composition = composition,
